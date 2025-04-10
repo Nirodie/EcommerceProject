@@ -18,7 +18,7 @@ li {
     list-style-type: none;
 }
 
-body{
+body {
     margin: 0;
 }
 
@@ -40,13 +40,13 @@ body{
 
 nav {
     display: grid;
-    grid-template-areas: 
-    "header header";
+    grid-template-areas:
+        "header header";
     padding: 2px;
     gap: 5px;
 }
 
-.navbuttons{
+.navbuttons {
     font-size: 24px;
 }
 
@@ -91,15 +91,9 @@ nav {
     width: 100%;
     height: auto;
     display: block;
-    margin-bottom: clamp(1rem, 3vw, 2rem);
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .hero-card p {
-    margin-top: 0;
-    font-size: clamp(1rem, 2vw, 1.125rem);
-    line-height: 1.6;
     color: #333;
     text-align: center;
 }
@@ -108,34 +102,52 @@ nav {
     text-align: center;
 }
 
+.spot-content {
+    display: none;
+}
+
 .product-card {
     max-width: 1200px;
-    margin: 0 auto;
     padding: clamp(1rem, 5vw, 2rem);
 }
 
-.product-main{
+.product-main {
     margin: 10px;
 }
 
 .product-card img {
     width: 100%;
     height: auto;
-    margin-bottom: clamp(1rem, 3vw, 2rem);
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .product-card p {
     margin-top: 0;
     font-size: 70%;
-    line-height: 1.6;
     color: #333;
 }
 
 .product-info {
     display: flex;
     justify-content: space-between;
+}
+
+.detail-card {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.detail-brand {
+    color: gray;
+}
+
+.detail-button {
+    width: 100%;
+    height: 40px;
+}
+
+.similar-products {
+    display: none;
 }
 
 .footer-list {
@@ -166,7 +178,7 @@ nav {
     height: auto;
 }
 
-.footer-final p{
+.footer-final p {
     align-self: center;
 }
 
@@ -195,7 +207,7 @@ nav {
 
     }
 
-    .navbuttons{
+    .navbuttons {
         margin-left: auto;
     }
 
@@ -207,52 +219,133 @@ nav {
         margin-left: auto;
     }
 
-    .hero-card {
-        padding-left: calc(clamp(1rem, 5vw, 2rem) + 40px);
-        padding-right: calc(clamp(1rem, 5vw, 2rem) + 40px);
-    }
-
     .hero-card img {
         border-radius: 12px;
     }
-    .product-content{
+
+    .product-content {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
-    .product-card h3{
-        font-size: 95%;
+
+    .product-card h3 {
+        font-size: 85%;
     }
-    
-    .footer-list{
+
+
+    .detail-card {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        margin-bottom: 100px;
+    }
+
+    .detail-card img {
+        width: 35%;
+    }
+
+    .detail-button {
+        width: auto;
+    }
+
+    .similar-products {
+        display: initial;
+    }
+
+    .similar-products h2 {
+        text-align: center;
+    }
+
+    .similar-content {
+        display: flex;
+    }
+
+    .footer-list {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-    
+        justify-items: start;
     }
-    .footer-final-menu{
+
+    .footer-icon div {
+        display: flex;
+        justify-content: center;
+        width: 100px;
+        height: 36px;
+    }
+
+    .footer-icon i {
+        margin: 0;
+    }
+
+    .footer-final-menu {
         display: flex;
         gap: 100px;
     }
-    
-    .footer-final{
+
+    .footer-final {
         height: 30vh;
     }
 }
 
 
 @media (min-width: 1024px) {
-    .hero-card {
-        display: grid;
-        grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr);
-        gap: clamp(2rem, 4vw, 3rem);
+
+    .header-logo {
+        max-width: 20%;
     }
 
-    .hero-card img {
-        grid-column: span 2;
-        aspect-ratio: 16 / 9;
-        object-fit: cover;
+    .hero-card {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 10px;
+    }
+
+    .hero-card h1 {
+        margin: 0;
+        font-size: 26px;
     }
 
     .hero-card p {
-        font-size: clamp(1.125rem, 2vw, 1.25rem);
+        margin-top: 15px;
+        font-size: 14px;
+    }
+
+    .spot-content {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 20px;
+    }
+
+    .spot-card {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .spot-card h2 {
+        position: absolute;
+        font-size: 20px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        width: 100%;
+        text-align: center;
+
+    }
+
+    .spot-card img {
+        object-fit: contain;
+    }
+
+    .product-content {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .footer-list {
+        display: flex;
+        justify-content: space-evenly;
     }
 }
